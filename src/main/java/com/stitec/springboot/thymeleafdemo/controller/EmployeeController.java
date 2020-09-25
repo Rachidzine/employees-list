@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.stitec.springboot.thymeleafdemo.model.Employee;
+import com.stitec.springboot.thymeleafdemo.entity.Employee;
 
 
 @Controller
@@ -23,8 +23,8 @@ public class EmployeeController {
 	@PostConstruct
 	private void loadData() {
 		Employee emp1 = new Employee(1, "sali", "gari", "sali@gmail.com");
-		Employee emp2 = new Employee(1, "zarli", "folit", "zarli@gmail.com");
-		Employee emp3 = new Employee(1, "poit", "court", "poit@gmail.com");
+		Employee emp2 = new Employee(2, "zarli", "folit", "zarli@gmail.com");
+		Employee emp3 = new Employee(3, "poit", "court", "poit@gmail.com");
 		
 		theEmployees = new ArrayList<Employee>();
 		
