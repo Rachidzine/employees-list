@@ -11,28 +11,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.stitec.springboot.thymeleafdemo.entity.Employee;
+import com.stitec.springboot.thymeleafdemo.service.EmployeeService;
 
 
 @Controller
 @RequestMapping("employees")
 public class EmployeeController {
 	
-	private List<Employee> theEmployees;
+	private EmployeeService employeeService;
 	
-	
-	@PostConstruct
-	private void loadData() {
-		Employee emp1 = new Employee(1, "sali", "gari", "sali@gmail.com");
-		Employee emp2 = new Employee(2, "zarli", "folit", "zarli@gmail.com");
-		Employee emp3 = new Employee(3, "poit", "court", "poit@gmail.com");
+    public EmployeeController(EmployeeService employeeService) {
+		this.employeeService = employeeService;
 		
-		theEmployees = new ArrayList<Employee>();
-		
-		theEmployees.add(emp1);
-		theEmployees.add(emp2);
-		theEmployees.add(emp3);
-		
-	
 	}
 	
 	
